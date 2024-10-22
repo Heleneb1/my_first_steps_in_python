@@ -17,9 +17,9 @@ while player_life > 0 and mystery_word!= player_word:
     if letter in mystery_word:
       for i in range(len(mystery_word)): 
            if mystery_word[i] == letter:
-            player_word = player_word[:i] + letter + player_word[i + 1:]
+            player_word = player_word[:i] + letter + player_word[i + 1:]#remplacer le "_" par la lettre trouvé 
     else:
-            player_life-=1
+            player_life-=1 #diminuer le nombre de vie si la lettre n'est pas dans le mot mystère
     # Vérifier si le joueur a deviné le mot
     if player_word == mystery_word:
         player_score += 1
