@@ -24,30 +24,14 @@ print(corrola.annee)
 #La méthode __init__() est appelée automatiquement chaque fois que la classe est utilisée pour créer un nouvel objet.
 #Les objets peuvent également contenir des méthodes. Les méthodes dans les objets sont des fonctions qui appartiennent à l'objet.
 #Créer un objet
-#TODO revoir la pizza avec les classes et surtout les méthodes 
-class Pizza:
-    def __init__(self, ingredients, base, prix, type, diametre):
-        self.ingredients = ingredients
-        self.base = base
-        self.prix = prix
-        self.type = type
-        self.diametre = diametre
 
-    def preparer_pizza(self):
-        print(f"Préparation de la pizza {self.type} avec {self.ingredients} sur une base {self.base} de diamètre {self.diametre} cm")
-    def cuire_pizza(self):
-        print("Cuisson de la pizza")
-    def livrer_pizza(self):
-        print(f"Livraison de la pizza {self.type} au prix de {self.prix} €")
+#Python grand nombre
+import locale
+locale.setlocale(locale.LC_ALL, 'fr_FR.UTF-8')
+a = 1_000_000_000_000_000
+b= 2_500
+print(a*b)
+print(f"{a*b:,}") #permet d'afficher un grand nombre avec des séparateurs de milliers par des virgules
+print(f"{a*b:n}")#permet d'afficher un grand nombre avec des séparateurs de milliers par des espaces
 
-base= input("Entrez la base de la pizza: (tomate ou blanche) ")
-ingredients = input("Entrez les ingrédients de la pizza: (separés par des virgules) ")
-diametre = input("Entrez le diamètre de la pizza, moyenne ou grande :")
 
-taille = 30
-if diametre == "grande":
-    taille = 40
-
-ingredients = ingredients.split(",")#transforme la chaine de caractères en liste   
-prix = 10 + len(ingredients) 
-pizza = Pizza(ingredients, base, prix, "Reine", taille)
